@@ -7,12 +7,12 @@
 
 <h2>HTML Table</h2>
 <div class="col-md-2"></div>
-   <form action="/search" method="get">
+   <form action="/search" method="post">
+      @csrf
    <div class="input-group">
       <input type="search" name="search"  value="{{request()->get('search')}}" class="form-control">
     &nbsp;
       <input type="search" name="search1" value="{{request()->get('search1')}}" class="form-control">
-    
       <span class="input-group-prepend">
          <button type="summit" style="background-color:yellow;">Search</button>
          <br>
@@ -25,12 +25,12 @@
   
    @if(session('status'))
    <div class="form group mb-3" style="width:300px;height:60px;border:3px
+   
    background-color:yellow;">{{ session('status') }}</div>
    @endif
-
 <table class="table-sortable">
    <thead>
-  <tr>
+  <tr> 
     <th width="10">id     &uarr; &darr;</th>
     <th width="50%">name</th>
     <th width="30%">phone</th>

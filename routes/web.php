@@ -14,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/employee',[EmployeeController::class,'index']);
-Route::get('/search',[EmployeeController::class,'search']);
+Route::post('/search',[EmployeeController::class,'search']);
 Route::put('/employee/{id}',[EmployeeController::class,'update']);

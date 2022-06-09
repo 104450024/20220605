@@ -13,7 +13,10 @@ class EmployeeController extends Controller
       $count=DB::table('employees')->count();
       return view('Employee.index',['bases'=>$bases,'count'=>$count]);
    }
+
+
    public function search(Request $request){
+
       $search=$request->get('search');
       $search1=$request->get('search1');
 
@@ -23,6 +26,9 @@ class EmployeeController extends Controller
       ->paginate(5);
       return view('Employee.index',['bases'=>$bases]); 
    }
+
+
+
 
 
    public function update(Request $request,$id){
